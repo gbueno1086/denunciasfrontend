@@ -1,0 +1,88 @@
+<div class="animated fadeIn">
+    <!--/.row-->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Novo</button>
+            <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Voltar</button>
+          </div>
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> País
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Codigo</th>
+                  <th>Cod. Postal</th>
+                  <th>Nome </th>
+                  <th>Sigla</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>55</td>
+                  <td>Brasil</td>
+                  <td>BR</td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>56</td>
+                  <td>Argentina</td>
+                  <td>AR</td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>57</td>
+                  <td>Uruguai</td>
+                  <td>UR </td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>58</td>
+                  <td>Paraguay</td>
+                  <td>PY</td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>59</td>
+                  <td>Bolivia</td>
+                  <td>BL </td>
+                </tr>
+              </tbody>
+            </table>
+            <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Ant</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Prox</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+
+    <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
+     
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This is a modal.
+      </div>
+    </ng-template>
+ 

@@ -1,3 +1,6 @@
+import { TokenInterceptor } from './token.interceptor';
+import { UsuarioModule } from './views/usuario/usuario.module';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -30,7 +33,6 @@ import {
   AppHeaderModule,
   AppFooterModule,
   AppSidebarModule,
-
 } from '@coreui/angular';
 
 // Import routing module
@@ -41,7 +43,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 
@@ -60,7 +62,8 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     TabsModule.forRoot(),
     ChartsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UsuarioModule
   ],
   declarations: [
     AppComponent,
@@ -73,8 +76,14 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
   ],
   providers: [{
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+    useClass: HashLocationStrategy,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }
+],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

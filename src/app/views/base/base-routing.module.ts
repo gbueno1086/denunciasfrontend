@@ -1,9 +1,3 @@
-import { ContribuinteComponent } from './contribuinte/contribuinte.component';
-import { BairroComponent } from './bairro/bairro.component';
-import { LogradouroComponent } from './logradouro/logradouro.component';
-import { CidadeComponent } from './cidade/cidade.component';
-import { UfComponent } from './uf/uf.component';
-import { PaisComponent } from './pais/pais.component';
 import { ImovelComponent } from './imovel/imovel.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -48,59 +42,10 @@ const routes: Routes = [
         }
       },
       {
-        path: 'pais',
-        component: PaisComponent,
-        data: {
-          title: 'Pais'
-        }
-      },
-      {
-        path: 'uf',
-        component: UfComponent,
-        data: {
-          title: 'Unidade Federativa'
-        }
-      },
-      {
-        path: 'cidade',
-        component: CidadeComponent,
-        data: {
-          title: 'Cidades'
-        }
-      },
-      {
-        path: 'logradouro',
-        component: LogradouroComponent,
-        data: {
-          title: 'Logradouros'
-        }
-      },
-      {
-        path: 'bairro',
-        component: BairroComponent,
-        data: {
-          title: 'Bairros'
-        }
-      },
-      {
-        path: 'contribuinte',
-        component: ContribuinteComponent,
-        data: {
-          title: 'Contribuintes'
-        }
-      },
-      {
         path: 'forms',
         component: PopoversComponent,
         data: {
           title: 'Forms'
-        }
-      },
-      {
-        path: 'progress',
-        component: ProgressComponent,
-        data: {
-          title: 'Progress'
         }
       },
       {

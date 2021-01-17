@@ -12,44 +12,12 @@ export const navItems: INavData[] = [
     icon: 'icon-doc',
     children: [
       {
-        name: 'Localização',
-        url:'',
-        icon:'icon-map',
-        children:[
-          {
-            name: 'País',
-            url: '/base/pais'
-          },
-          {
-            name: 'Uf',
-            url: '/base/uf'
-          },
-          {
-            name: 'Cidades',
-            url: '/base/cidade'
-          },
-          {
-            name: 'Bairros',
-            url: '/base/bairro'
-          },
-          {
-            name: 'Logradouros',
-            url: '/base/logradouro'
-          }, 
+        name: 'Usuários',
+        url:'/usuario/usuario-form',
+        icon:'icon-map'
+      } 
         ]
       },
-     
-      {
-        name: 'Imoveis',
-        url: '/base/imovel'
-      },
-      {
-        name: 'Contribuintes',
-        url: '/base/contribuinte'
-      
-      }
-    ]
-  },
   {
     name: 'Imobiliario',
     url: '/imobiliario',

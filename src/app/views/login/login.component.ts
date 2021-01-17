@@ -1,3 +1,5 @@
+import { navItems } from './../../_nav';
+import { Router, Routes } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -13,9 +15,10 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService){}
+    private authService: AuthService,private router: Router){}
+    
   
-  ngOnInit() {
+    ngOnInit() {
       
     this.formLogin = this.formBuilder.group({
        login: [null, Validators.required],
@@ -29,7 +32,16 @@ export class LoginComponent implements OnInit {
         this.authService.login(this.formLogin.value)
         .subscribe(result =>{
           if(result.token){
-            console.log(result);
+
+            const access_token  = JSON.stringify(result.token);
+            const userId = JSON.stringify(result.userId);
+            const nomeUser = JSON.stringify(result.nomeUser);
+            
+            localStorage.setItem("access_token", access_token);
+            localStorage.setItem("userId", userId);
+            localStorage.setItem("nomeUser", nomeUser);
+       
+            this.router.navigate(['/dashboard']);
           }else{
             alert("não deu certo");
           }

@@ -49,12 +49,7 @@ import { NavbarsComponent } from './navbars/navbars.component';
 import { BaseRoutingModule } from './base-routing.module';
 import { EmitenteComponent } from './emitente/emitente.component';
 import { ImovelComponent } from './imovel/imovel.component';
-import { PaisComponent } from './pais/pais.component';
-import { UfComponent } from './uf/uf.component';
-import { CidadeComponent } from './cidade/cidade.component';
-import { BairroComponent } from './bairro/bairro.component';
-import { LogradouroComponent } from './logradouro/logradouro.component';
-import { ContribuinteComponent } from './contribuinte/contribuinte.component';
+
 
 @NgModule({
   imports: [
@@ -85,12 +80,7 @@ import { ContribuinteComponent } from './contribuinte/contribuinte.component';
     NavbarsComponent,
     EmitenteComponent,
     ImovelComponent,
-    PaisComponent,
-    UfComponent,
-    CidadeComponent,
-    BairroComponent,
-    LogradouroComponent,
-    ContribuinteComponent
+
   ]
 })
 export class BaseModule { }

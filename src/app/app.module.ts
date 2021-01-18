@@ -1,4 +1,5 @@
 import { TokenInterceptor } from './token.interceptor';
+
 import { UsuarioModule } from './views/usuario/usuario.module';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -63,7 +64,7 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     ChartsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    UsuarioModule
+    UsuarioModule,
   ],
   declarations: [
     AppComponent,
@@ -74,15 +75,13 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     HomeComponent,
     AuthenticationComponent,
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy,
-  },
+  providers: [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
   }
+  
 ],
   bootstrap: [ AppComponent ]
 })

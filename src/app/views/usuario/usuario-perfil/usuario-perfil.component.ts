@@ -38,7 +38,6 @@ export class UsuarioPerfilComponent implements OnInit {
     .subscribe(result =>{
       if(result){
            this.populaForm(result);
-         console.log(result.id);
       }else{
         alert("não deu certo");
       }

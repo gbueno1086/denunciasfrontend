@@ -14,7 +14,7 @@ import { PopoversComponent } from './popovers.component';
 import { ProgressComponent } from './progress.component';
 import { TooltipsComponent } from './tooltips.component';
 import { NavbarsComponent } from './navbars/navbars.component';
-import { EmitenteComponent } from './emitente/emitente.component';
+
 
 const routes: Routes = [
   {
@@ -26,13 +26,6 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'emitente'
-      },
-      {
-        path: 'emitente',
-        component: EmitenteComponent,
-        data: {
-          title: 'Emitente'
-        }
       },
       {
         path: 'imovel',

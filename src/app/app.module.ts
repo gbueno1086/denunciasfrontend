@@ -1,3 +1,4 @@
+import { ImovelModule } from './views/imovel/imovel.module';
 import { TokenInterceptor } from './token.interceptor';
 
 import { UsuarioModule } from './views/usuario/usuario.module';
@@ -47,6 +48,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { EmitenteModule } from './views/emitente/emitente.module';
 
 @NgModule({
   imports: [
@@ -65,6 +67,8 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     ReactiveFormsModule,
     HttpClientModule,
     UsuarioModule,
+    EmitenteModule,
+    ImovelModule
   ],
   declarations: [
     AppComponent,
@@ -75,7 +79,10 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     HomeComponent,
     AuthenticationComponent,
   ],
-  providers: [
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy,
+  },
   {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,

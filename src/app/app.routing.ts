@@ -43,8 +43,16 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: 'emitente',
+        loadChildren: () => import('./views/emitente/emitente.module').then(m => m.EmitenteModule)
+      },
+      {
         path: 'usuario',
         loadChildren: () => import('./views/usuario/usuario.module').then(m => m.UsuarioModule)
+      },
+      {
+        path: 'imovel',
+        loadChildren: () => import('./views/imovel/imovel.module').then(m => m.ImovelModule)
       },
       {
         path: 'base',

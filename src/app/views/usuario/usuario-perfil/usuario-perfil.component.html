@@ -1,6 +1,6 @@
 <div class="animated fadeIn">
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
             <strong>Meus Dados</strong>
@@ -10,10 +10,11 @@
           <div class="card-body">
             <div class="form-group">
                 <div class="row">
-                    <div class="form-group col-sm-2">
-                        <label for="Cadastros">CÓDIGO</label>
-                        <input type="text" class="form-control" id="codigo"  disabled formControlName="id" >
-                      </div>
+                  <div class="form-group col-sm-2">
+                    <img src="../../../../assets/img/avatars/notImgPerfil.png" alt="some text" width=200 height=150>
+                  </div>
+                        <input type="text" class="form-control" id="codigo"  disabled formControlName="id" hidden>
+                      
                     <div class="form-group col-sm-6">
                       <label for="Cadastros">NOME</label>
                       <input type="text" class="form-control" id="nome" formControlName="nome" >
@@ -26,24 +27,38 @@
             </div>
             <div class="form-group">
               <div class="row">
-                  <div class="form-group col-sm-3">
+                  <div class="form-group col-sm-6">
                     <label for="Cadastros">MATRÍCULA</label>
                     <input type="text" class="form-control" id="matricula" formControlName="matricula"  >
                   </div>
-                  <div class="form-group col-sm-3">
+                  <div class="form-group col-sm-6">
                     <label for="postal-code">LOGIN</label>
                     <input type="text" class="form-control" id="login" formControlName="login" >
                   </div>
-                  <div class="form-group col-sm-3">
-                    <label for="postal-code">SENHA</label>
-                    <input type="password" class="form-control" id="senha" formControlName="senha" disabled >
-                  </div>
-                  <div class="form-group col-sm-3">
-                    <label for="postal-code">STATUS</label>
-                    <input type="text" class="form-control" id="status" formControlName="status"  >
-                  </div>
                 </div><!--/.row-->
+                
           </div>
+          <div class="form-group">
+            <div class="row">
+                <div class="form-group col-sm-3">
+                  <label for="Cadastros">MATRÍCULA</label>
+                  <input type="text" class="form-control" id="matricula" formControlName="matricula"  >
+                </div>
+                <div class="form-group col-sm-3">
+                  <label for="postal-code">LOGIN</label>
+                  <input type="text" class="form-control" id="login" formControlName="login" >
+                </div>
+                <div class="form-group col-sm-3">
+                  <label for="postal-code">SENHA</label>
+                  <input type="password" class="form-control" id="senha" formControlName="senha" disabled >
+                </div>
+                <div class="form-group col-sm-3">
+                  <label for="postal-code">STATUS</label>
+                  <input type="text" class="form-control" id="status" formControlName="status"  >
+                </div>
+              </div><!--/.row-->
+              
+        </div>
           </div>
           
           <div class="card-footer">
@@ -54,4 +69,8 @@
         </div>
       </div><!--/.col-->
     </div><!--/.row-->
+
+    
+      
+    
     

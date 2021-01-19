@@ -1,12 +1,14 @@
+import { ModalDirective } from 'ngx-bootstrap/modal';
 import { UsuarioService } from './../../../services/usuarios/usuario.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Usuario } from '../../../models/usuario';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-usuario-perfil',
   templateUrl: './usuario-perfil.component.html',
-  styleUrls: ['./usuario-perfil.component.css']
+  styleUrls: ['./usuario-perfil.component.css'],
+  
 })
 export class UsuarioPerfilComponent implements OnInit {
 
@@ -14,7 +16,7 @@ export class UsuarioPerfilComponent implements OnInit {
   formPerfil: FormGroup;
 
   constructor( private formBuilder: FormBuilder, private  usuarioService : UsuarioService) { }
-
+ 
   ngOnInit(): void {
     
     const idLogado =  parseInt(localStorage.getItem("userId"));

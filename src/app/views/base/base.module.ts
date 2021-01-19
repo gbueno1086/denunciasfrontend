@@ -47,7 +47,6 @@ import { NavbarsComponent } from './navbars/navbars.component';
 
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
-import { EmitenteComponent } from './emitente/emitente.component';
 import { ImovelComponent } from './imovel/imovel.component';
 
 
@@ -78,7 +77,6 @@ import { ImovelComponent } from './imovel/imovel.component';
     ProgressComponent,
     TooltipsComponent,
     NavbarsComponent,
-    EmitenteComponent,
     ImovelComponent,
 
   ]

@@ -1,3 +1,4 @@
+import { ImovelService } from './services/imovel/imovel.service';
 import { ImovelModule } from './views/imovel/imovel.module';
 import { TokenInterceptor } from './token.interceptor';
 
@@ -44,7 +45,7 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,  FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
@@ -65,6 +66,7 @@ import { EmitenteModule } from './views/emitente/emitente.module';
     TabsModule.forRoot(),
     ChartsModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     UsuarioModule,
     EmitenteModule,
@@ -87,7 +89,8 @@ import { EmitenteModule } from './views/emitente/emitente.module';
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
-  }
+  },
+  ImovelService
   
 ],
   bootstrap: [ AppComponent ]

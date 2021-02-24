@@ -1,89 +1,95 @@
 <div class="animated fadeIn">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-header">
-            <i class="fa fa-align-justify"></i> Simple Table
-          </div>
-          <div class="card-body">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>#ID</th>
-                  <th>MATRICULA</th>
-                  <th>NOME</th>
-                  <th>CPF</th>
-                  <th>LOGIN</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>01</td>
-                  <td>1201-18</td>
-                  <td>GILIARDI DE SOUZA BUENO</td>
-                  <td>356.187.718-45</td>
-                  <td>giliardi</td>
-                  <td>
-                    <span class="badge badge-success">ATIVO</span>
-                  </td>
-                </tr>
-                <tr>
-                    <td>01</td>
-                    <td>1201-18</td>
-                    <td>GILIARDI DE SOUZA BUENO</td>
-                    <td>356.187.718-45</td>
-                    <td>giliardi</td>
-                    <td>
-                      <span class="badge badge-success">ATIVO</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>01</td>
-                    <td>1201-18</td>
-                    <td>GILIARDI DE SOUZA BUENO</td>
-                    <td>356.187.718-45</td>
-                    <td>giliardi</td>
-                    <td>
-                      <span class="badge badge-success">ATIVO</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>01</td>
-                    <td>1201-18</td>
-                    <td>GILIARDI DE SOUZA BUENO</td>
-                    <td>356.187.718-45</td>
-                    <td>giliardi</td>
-                    <td>
-                      <span class="badge badge-success">ATIVO</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>01</td>
-                    <td>1201-18</td>
-                    <td>GILIARDI DE SOUZA BUENO</td>
-                    <td>356.187.718-45</td>
-                    <td>giliardi</td>
-                    <td>
-                      <span class="badge badge-success">ATIVO</span>
-                    </td>
-                  </tr>
-              </tbody>
-            </table>
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-              <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>CADASTRO DE FISCAIS</strong>
+          <small></small>
         </div>
+        <form [formGroup]="formUsuario" #userSalvar="ngForm"  (ngSubmit)="onSubmit(userSalvar)">
+        <div class="card-body">
+          <div class="form-group">
+              <div class="row">      
+                  <div class="form-group col-sm-6">
+                    <label for="Cadastros">NOME</label>
+                    <input type="text" class="form-control form-control-lg" formControlName="nome"  required >
+                    <div *ngIf="!formUsuario.get('nome').valid && formUsuario.get('nome').touched" class="alert alert-danger">
+                      campo nome é obrigatório!
+                    </div>
+                  </div>
+                  
+                  <div class="form-group col-sm-6">
+                    <label for="postal-code">CPF</label>
+                    <input type="text" class="form-control form-control-lg" formControlName="cpf" required >
+                    <div *ngIf="!formUsuario.get('cpf').valid && formUsuario.get('cpf').touched" class="alert alert-danger">
+                      campo cpf é obrigatório!
+                    </div>
+                  </div>
+                 
+                </div><!--/.row-->
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label for="Cadastros">MATRÍCULA</label>
+                <input type="text" class="form-control form-control-lg" formControlName="matricula" >
+                <div *ngIf="!formUsuario.get('matricula').valid && formUsuario.get('matricula').touched" class="alert alert-danger">
+                  campo matricula é obrigatório!
+                </div>
+              </div>
+                <div class="form-group col-sm-6">
+                  <label for="postal-code">CELULAR</label>
+                  <input type="text" class="form-control form-control-lg" formControlName="celular" >
+                  <div *ngIf="!formUsuario.get('celular').valid && formUsuario.get('celular').touched" class="alert alert-danger">
+                    campo celular é obrigatório!
+                  </div>
+                </div>
+              </div><!--/.row-->
+              
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label for="postal-code">EMAIL</label>
+              <input type="text" class="form-control form-control-lg" id="email" formControlName="email">
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="postal-code">LOGIN</label>
+              <input type="text" class="form-control form-control-lg" formControlName="login" >
+              <div *ngIf="!formUsuario.get('login').valid && formUsuario.get('login').touched" class="alert alert-danger">
+                campo login é obrigatório!
+              </div>
+            </div>
+            <div class="form-group col-sm-4">
+              <label for="Cadastros">SENHA</label>
+              <input type="password" class="form-control form-control-lg" formControlName="senha"  >
+              <div *ngIf="!formUsuario.get('login').valid && formUsuario.get('login').touched" class="alert alert-danger">
+                campo senha é obrigatório!
+              </div>
+            </div>
+            </div><!--/.row-->
+        </div>
+        <div class="form-group">
+          <div class="row">
+         <div class="form-group col-sm-4">
+           <label for="Cadastros">CONFIRMAR SENHA</label>
+           <input type="password" class="form-control form-control-lg" formControlName="confirmarSenha"  >
+           <div *ngIf="!formUsuario.get('confirmarSenha').valid && formUsuario.get('confirmarSenha').touched" class="alert alert-danger">
+             campo confirmar senha é obrigatório!
+            </div>
+           </div>
+          </div><!--/.row-->
+         </div>
       </div>
-      <!--/.col-->
-    </div>
-  </div>
- 
+        
+        <div class="card-footer">
+          <button  type="submit" [disabled]="!formUsuario.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>Salvar</button>
+          <button type="button" (click)="voltarListaUsuario()" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Voltar</button>
+        </div>
+      </form>
+      </div>
+    </div><!--/.col-->
+  </div><!--/.row-->
+
+  <div>{{ formUsuario.value | json}}</div>
+  <div>{{ formUsuario.valid | json }}</div>

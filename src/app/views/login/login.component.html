@@ -4,24 +4,33 @@
         <div class="row">
           <div class="col-md-5 mx-auto">
             <div class="card-group">
+             
               <div class="card p-4">
                 <div class="card-body">
-                  <form (submit)="login()" [formGroup]="formLogin">
+                  <div *ngIf="alert" class="success"></div>
+                  <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                  <p id="profile-name" class="profile-name-card"></p>
+                  <hr>
+                  <form (submit)="login()" [formGroup]="formLogin" >
                     <h1>Entrar</h1> 
                     <p class="text-muted">Faça o login em sua conta!</p>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="icon-user"></i></span>
                       </div>
-                      <input type="text" class="form-control" [ngClass]="{'is-invalid': formLogin.get('login').errors?.required}" formControlName="login" placeholder="Login" required>
-                      <div class="invalid-feedback">Usuário requerido!</div>
+                      <input type="text"  class="form-control form-control-lg"  formControlName="login" placeholder="Login" required autocomplete="off">
+                    </div>
+                    <div *ngIf="!formLogin.get('login').valid && formLogin.get('login').touched" class="alert alert-danger">
+                      campo usuario é obrigatório!
                     </div>
                     <div class="input-group mb-4">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="icon-lock"></i></span>
                       </div>
-                      <input  type="password" class="form-control is-invalid"[ngClass]="{'is-invalid': formLogin.get('senha').errors?.required}" formControlName="senha" placeholder="Senha" required>
-                      <div class="invalid-feedback">Senha requerida!</div>
+                      <input  type="password"  class="form-control form-control-lg" formControlName="senha" placeholder="Senha" required autocomplete="off">
+                    </div>
+                    <div *ngIf="!formLogin.get('senha').valid && formLogin.get('senha').touched" class="alert alert-danger">
+                      campo senha é obrigatório!
                     </div>
                     <div class="row">
                       <div class="col-6">

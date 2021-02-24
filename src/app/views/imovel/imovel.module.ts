@@ -1,3 +1,4 @@
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,7 +14,8 @@ import { ImovelPesquisaComponent } from './imovel-pesquisa/imovel-pesquisa.compo
     CommonModule,
     ImovelRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    CollapseModule
+    ]
 })
 export class ImovelModule { }

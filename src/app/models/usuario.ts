@@ -6,7 +6,11 @@ export class Usuario{
         matricula: string;
         foto: string;
         celular: string;
+        email: string;
         login: string;
         senha: string;
         status: number;
+        dataCadastro: Date;
+        dataAlteracao: Date;
+        usuarioCadastrou: number;
 }

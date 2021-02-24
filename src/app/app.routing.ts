@@ -47,6 +47,18 @@ export const routes: Routes = [
         loadChildren: () => import('./views/emitente/emitente.module').then(m => m.EmitenteModule)
       },
       {
+        path: 'denuncia',
+        loadChildren: () => import('./views/denuncia/denuncia.module').then(m => m.DenunciaModule)
+      },
+      {
+        path: 'status-denuncia',
+        loadChildren: () => import('./views/status-denuncia/status-denuncia.module').then(m => m.StatusDenunciaModule)
+      },
+      {
+        path: 'tipo-denuncia',
+        loadChildren: () => import('./views/tipo-denuncia/tipo-denuncia.module').then(m => m.TipoDenunciaModule)
+      },
+      {
         path: 'usuario',
         loadChildren: () => import('./views/usuario/usuario.module').then(m => m.UsuarioModule)
       },
@@ -55,36 +67,8 @@ export const routes: Routes = [
         loadChildren: () => import('./views/imovel/imovel.module').then(m => m.ImovelModule)
       },
       {
-        path: 'base',
-        loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
-      },
-      {
-        path: 'buttons',
-        loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
-      },
-      {
-        path: 'charts',
-        loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
-      },
-      {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
-      },
-      {
-        path: 'icons',
-        loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
-      },
-      {
-        path: 'notifications',
-        loadChildren: () => import('./views/notifications/notifications.module').then(m => m.NotificationsModule)
-      },
-      {
-        path: 'theme',
-        loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
-      },
-      {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
       }
     ]
   },

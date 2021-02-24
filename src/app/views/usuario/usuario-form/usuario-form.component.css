@@ -1,0 +1,8 @@
+.alert-md-local {
+    background-color: #009688;
+    border-color: #00695C;
+    color: #fff;
+  }
+.ng-invalid.ng-touched:not(form){
+    border: 1px solid red;
+}

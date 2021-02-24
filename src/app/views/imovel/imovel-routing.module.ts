@@ -1,5 +1,4 @@
 import { ImovelPesquisaComponent } from './imovel-pesquisa/imovel-pesquisa.component';
-import { ImovelComponent } from './../base/imovel/imovel.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ImovelFormComponent } from './imovel-form/imovel-form.component';

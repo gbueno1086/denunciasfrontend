@@ -1,0 +1,134 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>LANÇAR DENUNCIA</strong>
+            <small></small>
+          </div>
+          <form  [formGroup]="formDenuncia" #denunciaSalvar="ngForm"  (ngSubmit)="onSubmitDenuncia(denunciaSalvar)">
+          <div class="card-body">
+            <div class="form-group">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                      <label for="Cadastros">NOME DENUNCIANTE</label>
+                      <input type="text" class="form-control form-control-lg" id="nomeDenunciante" formControlName="nomeDenunciante"  >
+                    </div>
+                    <div class="form-group col-sm-3">
+                      <label for="postal-code">CPF DENUNCIANTE</label>
+                      <input type="text" class="form-control form-control-lg" id="cpfDenunciante" formControlName="cpfDenunciante" >
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="postal-code">RG DENUNCIANTE</label>
+                        <input type="text" class="form-control form-control-lg" id="rgDenunciante" formControlName="rgDenunciante" >
+                      </div>
+                  </div><!--/.row-->
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="form-group col-sm-4">
+                    <label for="Cadastros">LOGRADOURO DENUNCIANTE</label>
+                    <input type="text" class="form-control form-control-lg" id="logradouroDenunciante" formControlName="logradouroDenunciante" >
+                  </div>
+                  <div class="form-group col-sm-2">
+                    <label for="Cadastros">NUMERO</label>
+                    <input type="text" class="form-control form-control-lg" id="numeroDenunciante" formControlName="numeroDenunciante">
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="postal-code">COMPLEMENTO</label>
+                    <input type="text" class="form-control form-control-lg" id="complementoDenunciante" formControlName="complementoDenunciante" >
+                  </div>
+                </div><!--/.row-->
+          </div>
+         <div class="form-group">
+            <div class="row">
+              <div class="form-group col-sm-3">
+                <label for="Cadastros">BAIRRO</label>
+                <input type="text" class="form-control form-control-lg" id="bairroDenunciante" formControlName="bairroDenunciante"  >
+              </div>
+                <div class="form-group col-sm-3">
+                  <label for="Cadastros">CIDADE</label>
+                  <input type="text" class="form-control form-control-lg" id="cidadeDenunciante" formControlName="cidadeDenunciante"  >
+                </div>
+                <div class="form-group col-sm-2">
+                  <label for="postal-code">ESTADO</label>
+                  <input type="text" class="form-control form-control-lg" id="estadoDenunciante" formControlName="estadoDenunciante" >
+                </div>
+                <div class="form-group col-sm-4">
+                  <label for="postal-code">TELEFONE</label>
+                  <input type="text" prefix="+7" mask="(000) 000 00 00" class="form-control"   id="telefoneDenunciante" formControlName="telefoneDenunciante" >
+                </div>
+              </div><!--/.row-->
+        </div>
+        <HR SIZE=7>
+        <div class="form-group">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="Cadastros">NOME DENUNCIADO</label>
+                  <input type="text" class="form-control form-control-lg" id="nomeDenunciado" formControlName="nomeDenunciado"  >
+                </div>
+                <div class="form-group col-sm-3">
+                  <label for="postal-code">CPF DENUNCIADO</label>
+                  <input type="text" class="form-control form-control-lg" id="cpfDenunciado" formControlName="cpfDenunciado" >
+                </div>
+                <div class="form-group col-sm-3">
+                  <label for="postal-code">TELEFONE</label>
+                  <input type="text" prefix="+7" mask="(000) 000 00 00" class="form-control"   id="rgDenunciado" formControlName="rgDenunciado" >
+                </div>
+              </div><!--/.row-->
+        </div>
+          <div class="form-group">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="Cadastros">LOGRADOURO</label>
+                  <input type="text" class="form-control form-control-lg" id="logradouroDenunciado" formControlName="logradouroDenunciado"  >
+                </div>
+                <div class="form-group col-sm-2">
+                  <label for="postal-code">NUMERO </label>
+                  <input type="text" class="form-control form-control-lg" id="numeroDenunciado" formControlName="numeroDenunciado" >
+                </div>
+                <div class="form-group col-sm-4">
+                  <label for="postal-code">COMPLEMENTO </label>
+                  <input type="text" prefix="+7" mask="(000) 000 00 00" class="form-control form-control-lg"   id="complementoDenunciado" formControlName="complementoDenunciado" >
+                </div>
+              </div><!--/.row-->
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="Cadastros">BAIRRO </label>
+                  <input type="text" class="form-control form-control-lg" id="bairroDenunciado" formControlName="bairroDenunciado"  >
+                </div>
+              </div><!--/.row-->
+        </div>
+        <HR SIZE=7>
+        <div class="form-group">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="Cadastros">TIPO DENUNCIA</label>
+                  <select  class="form-control form-control-lg" formControlName="tipoDenuncia">
+                    <option>MOTIVO DA DENUNCIA</option>
+                    <option *ngFor="let t of tipodenuncia"  value="{{t.descricao}}">{{t.descricao}}</option>
+                  </select>
+                </div>
+              </div><!--/.row-->
+              <div class="form-group col-sm-6">
+                <label for="postal-code">DESCRICAO DENUNCIA</label>
+                <textarea class="form-control" id="descricaoDenuncia" formControlName="descricaoDenuncia" rows="3"></textarea>
+              </div>
+              <div class="form-group col-sm-4">
+                <label for="postal-code">TEMPO VERIFICACAO</label>
+                <input type="text"  class="form-control"   id="tempoVerificacao" formControlName="tempoVerificacao" >
+              </div>
+              <input type="text" id="status" formControlName="status" value="RECEBIDO">
+        </div>
+          </div>
+          
+          <div class="card-footer">
+            <button  type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>SALVAR</button>
+            <button type="reset" (click)="voltar()" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> VOLTAR</button>
+          </div>
+        </form>
+        </div>
+      </div><!--/.col-->
+    </div><!--/.row-->

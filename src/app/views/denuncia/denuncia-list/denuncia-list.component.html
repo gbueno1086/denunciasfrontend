@@ -1,0 +1,77 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-group">
+            
+          <div class="col-md-12">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Pesquisa</button>
+              </span>
+              <input type="text" id="input1-group2" name="input1-group2" class="form-control" placeholder="Pesquisar">
+            </div>
+          </div>
+          </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                          <button type="button" (click)="novoCadastro()" class="btn btn-success btn-lg btn-block">Novo</button>
+                      </div>
+                    </div><!--/.col-->
+              </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#ID</th>
+                  <th>DENUNCIANTE</th>
+                  <th>DENUNCIADO</th>
+                  <th>LOGRADOURO</th>
+                  <th>NUMERO</th>
+                  <th>MOTIVO DENUNCIA</th>
+                  <th>DATA VENCIMENTO</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let d of denuncia">
+                  <td>{{d.id}}</td>
+                  <td>{{d.nomeDenunciante}}</td>
+                  <td>{{d.nomeDenunciado}}</td>
+                  <td>{{d.logradouroDenunciado}}</td>
+                  <td>{{d.numeroDenunciado}}</td>
+                  <td>{{d.tipoDenuncia}}</td>
+                  <td>{{d.dataVencimento | date:"dd/MM/yyyy"}}</td>
+                  <td><a routerLink="/denuncia/denuncia-update/{{d.id}}">
+                    <button type="button" class="btn btn-outline-success">Editar</button>
+                      </a>
+                        <button type="button" (click)="openModal(denuncia)" class="btn btn-outline-danger">excluir</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <ng-template #deleteModal>
+    <div class="modal-body text-center">
+      <p>Deseja Realmente Exluir esse Registro?</p>
+      <button type="button" class="btn btn-danger" (click)="confirm()" >Sim</button>
+      <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+    </div>
+  </ng-template>

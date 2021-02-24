@@ -1,0 +1,68 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-group">
+            
+          <div class="col-md-12">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Pesquisa</button>
+              </span>
+              <input type="text" id="input1-group2" name="input1-group2" class="form-control" placeholder="Pesquisar">
+            </div>
+          </div>
+          </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                          <button type="button" (click)="novoCadastro()" class="btn btn-success btn-lg btn-block">Novo</button>
+                      </div>
+                    </div><!--/.col-->
+              </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#ID</th>
+                  <th>MATRICULA</th>
+                  <th>NOME</th>
+                  <th>CELULAR</th>
+                  <th>EMAIL</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of usuarios">
+                  <td>{{ user.id }}</td>
+                  <td>{{ user.matricula }}</td>
+                  <td>{{ user.nome }}</td>
+                  <td>{{ user.celular }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>
+                    <span class="badge badge-success">{{user.status}}</span>
+                  </td>
+                  <td><button type="button" class="btn btn-outline-success">Editar</button>
+                    <button type="button" class="btn btn-outline-danger">Excluir</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+     
+       
+    </div>
+  </div>
+  

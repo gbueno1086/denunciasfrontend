@@ -13,11 +13,19 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'Tipo Denuncia',
-        url:'/usuario/usuario-form',
+        url:'/tipo-denuncia/tipo-denuncia-list',
       } ,
       {
         name: 'Imóveis',
-        url:'/usuario/usuario-form',
+        url:'/imovel/imovel-form',
+      } ,
+      {
+        name: 'Status da Denuncia',
+        url:'/status-denuncia/status-denuncia',
+      },
+      {
+        name: 'Lançar Denuncia',
+        url:'/denuncia/denuncia-list',
       } 
         ]
       },
@@ -32,7 +40,7 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Usuarios',
-        url: '/usuario/usuario-form',
+        url: '/usuario/usuario-listar',
       },
      
     ]

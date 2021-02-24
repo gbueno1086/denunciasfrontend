@@ -1,3 +1,7 @@
+import { StatusDenunciaModule } from './views/status-denuncia/status-denuncia.module';
+import { SharedModule } from './shared/shared.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { AlertModule } from 'ngx-bootstrap/alert';
 import { ImovelService } from './services/imovel/imovel.service';
 import { ImovelModule } from './views/imovel/imovel.module';
 import { TokenInterceptor } from './token.interceptor';
@@ -30,6 +34,10 @@ const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
 
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+ 
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+
 import {
   AppAsideModule,
   AppBreadcrumbModule,
@@ -50,6 +58,8 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { EmitenteModule } from './views/emitente/emitente.module';
+import { DenunciaModule } from './views/denuncia/denuncia.module';
+
 
 @NgModule({
   imports: [
@@ -70,7 +80,14 @@ import { EmitenteModule } from './views/emitente/emitente.module';
     HttpClientModule,
     UsuarioModule,
     EmitenteModule,
-    ImovelModule
+    ImovelModule,
+    AlertModule.forRoot(),
+    ModalModule.forRoot(),
+    SharedModule,
+    NgxMaskModule.forRoot(),
+    StatusDenunciaModule,
+    DenunciaModule
+
   ],
   declarations: [
     AppComponent,
@@ -80,6 +97,7 @@ import { EmitenteModule } from './views/emitente/emitente.module';
     LoginComponent,
     HomeComponent,
     AuthenticationComponent,
+
   ],
   providers: [{
     provide: LocationStrategy,

@@ -8,42 +8,42 @@
         </div>
 
         
-            <h3 class="panel-title">{{ emitente.nomeEmitente }}</h3>
+            <h4 class="panel-title">{{ emitente.razaoSocial }}</h4>
         
           <div class="panel-body">
             <div class="row">
-              <div class="col-md-3 col-lg-3 "> <img alt="User Pic" src="../../../../../../../Pictures/notImgpefil2.png" class="img-circle img-responsive"> </div>
+              <div class="col-md-3 col-lg-3 "> <img alt="User Pic" src="../../../assets/img/avatars/brasao.png" class="img-circle img-responsive"> </div>
               
               <div class=" col-md-9 col-lg-9 "> 
                 <table class="table table-user-information">
                   <tbody>
                     <tr>
                       <td>CNPJ:</td>
-                      <td>{{ emitente.cnpjEmitente}}</td>
+                      <td>{{ emitente.cnpj}}</td>
                     </tr>
                     <tr>
                       <td>LOGRADOURO:</td>
-                      <td>{{ emitente.logradouroEmitente }}</td>
+                      <td>{{ emitente.endereco.logradouro }}</td>
                     </tr>
                     <tr>
                       <td>NUMERO:</td>
-                      <td>{{ emitente.numero_emitente }}</td>
+                      <td>{{ emitente.endereco.numero }}</td>
                     </tr>
                        <tr>
                            <tr>
                       <td>BAIRRO:</td>
-                      <td>{{ emitente.bairroEmitente }}</td>
+                      <td>{{ emitente.endereco.bairro }}</td>
                     </tr>
                       <tr>
                       <td>CEP:</td>
-                      <td>{{ emitente.cepEmitente }}</td>
+                      <td>{{ emitente.endereco.cep }}</td>
                     </tr>
                     <tr>
                       <td>EMAIL:</td>
-                      <td>{{ emitente.emailEmitente }}</td>
+                      <td>{{ emitente.email }}</td>
                     </tr>
                       <td>TELEFONE: </td>
-                      <td>{{ emitente.telefoneEmitente }}</td>
+                      <td>{{ emitente.telefone }}</td>
                   </tbody>
                 </table>
                 

@@ -12,11 +12,11 @@ export class EmitenteService {
   constructor(private http : HttpClient) {}
 
   getEmitentePorId(id: number):Observable<Emitente>{
-    return this.http.get<Emitente>(`${baseUrl}emitente/`+id);
+    return this.http.get<Emitente>(`${baseUrl}prefeitura/`+id);
   }
 
   getEmitente():Observable<Emitente[]>{
-    return this.http.get<Emitente[]>(`${baseUrl}emitente`);
+    return this.http.get<Emitente[]>(`${baseUrl}prefeitura`);
   }
 
   postEmitente(emitente: Emitente):Observable<Emitente>{

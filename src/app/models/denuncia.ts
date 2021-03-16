@@ -1,9 +1,14 @@
+import { Usuario } from './usuario';
+import { Divisao } from './divisao';
+import { TipoDenuncia } from './tipoDenuncia';
 export class Denuncia{
    
      id: string;
+     tipodenuncia: TipoDenuncia;
+     divisao: Divisao;
      nomeDenunciante: string;
     cpfDenunciante: string;
-    rgDenunciante: string;
+    cepDenunciantee: string;
     logradouroDenunciante: string;
     numeroDenunciante : string;
     complementoDenunciante: string;
@@ -13,7 +18,7 @@ export class Denuncia{
     telefoneDenunciante: string;
     nomeDenunciado: string;
     cpfDenunciado: string;
-    rgDenunciado: string;
+    cepDenunciado: string;
     logradouroDenunciado: string;
     numeroDenunciado: string;
     complementoDenunciado: string;
@@ -23,8 +28,16 @@ export class Denuncia{
 	dataCadastro: Date;
     tempoVerificacao: number;
     dataVencimento: Date;
-    usuarioCadastrou : string;
+    usuarioCadastrou: Usuario
     status: string;
-    respostaDenuncia: string;
-    fiscalRespondeu: string;
+    quematribuiu: Number ;
+    fiscalAtribuido:Number ;
+    dataAtribuicao: Date;
+    respostaDenuncia: string ;
+    dataAResposta: Date;
+    documentoVinculado: Number ;
+     vincularNotificacao: string ;
+     dataAEncerramento:Date;
+     fiscalEncerrou: Number ;
+     descricaoEncerramento: string;
 }

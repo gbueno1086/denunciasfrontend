@@ -24,12 +24,10 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>#ID</th>
-                  <th>DENUNCIANTE</th>
-                  <th>DENUNCIADO</th>
-                  <th>LOGRADOURO</th>
-                  <th>NUMERO</th>
+                  <th>#NUMERO</th>
                   <th>MOTIVO DENUNCIA</th>
+                  <th>DIVISÃO</th>
+                  <th>DATA LANÇAMENTO</th>
                   <th>DATA VENCIMENTO</th>
                   <th>Ações</th>
                 </tr>
@@ -37,12 +35,10 @@
               <tbody>
                 <tr *ngFor="let d of denuncia">
                   <td>{{d.id}}</td>
-                  <td>{{d.nomeDenunciante}}</td>
-                  <td>{{d.nomeDenunciado}}</td>
-                  <td>{{d.logradouroDenunciado}}</td>
-                  <td>{{d.numeroDenunciado}}</td>
-                  <td>{{d.tipoDenuncia}}</td>
-                  <td>{{d.dataVencimento | date:"dd/MM/yyyy"}}</td>
+                  <td>{{d.tipodenuncia.descricao}}</td>
+                  <td>{{d.divisao.nomeDivisao}}</td>
+                  <td>{{d.dataCadastro }}</td>
+                  <td>{{d.dataVencimento}}</td>
                   <td><a routerLink="/denuncia/denuncia-update/{{d.id}}">
                     <button type="button" class="btn btn-outline-success">Editar</button>
                       </a>

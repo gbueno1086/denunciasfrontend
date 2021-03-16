@@ -26,5 +26,10 @@ export class DenunciaService {
     const url = `${baseUrl}denuncia`
     return this.http.post<Denuncia>(url, denuncia);
   }
+
+  updateDenuncia(id:string, denuncia: Denuncia):Observable<Denuncia>{
+    const url = `${baseUrl}denuncia/${id}`
+    return this.http.put<Denuncia>(url, denuncia);
+  }
   
 }
